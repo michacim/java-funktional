@@ -1,12 +1,13 @@
 import java.util.Objects;
 
-public class Person {
+public class Person  {
     private int age;
     private String name;
 
     public Person(int age, String name) {
         this.age = age;
         this.name = name;
+
     }
 
     @Override
@@ -31,4 +32,6 @@ public class Person {
         result = 31 * result + Objects.hashCode(name);
         return result;
     }
+
+
 }
