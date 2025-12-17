@@ -17,6 +17,8 @@ public class StreamMain {
                 new Person(17,"Otto")
 
         );
+
+
         List<Person> oldPersons = persons.stream().filter(p -> p.getAge() > 17).toList();
         System.out.println(oldPersons);
         // map
@@ -26,7 +28,6 @@ public class StreamMain {
                 .toList();
         names.forEach(System.out::println);
         //reduce  - reduzieren auf ein Objekt
-
         Person person = persons.stream().reduce((p1, p2) -> p1.getAge() < p2.getAge()?p1:p2 ).get();//orElse(null)
         System.out.println(person);
         Person person2 = persons.stream().reduce(StreamMain::oldPerson ).get();//orElse(null)
