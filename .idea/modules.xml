@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/_01_FileHandler/_01_FileHandler.iml" filepath="$PROJECT_DIR$/_01_FileHandler/_01_FileHandler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_02_Collections/_02_Collections.iml" filepath="$PROJECT_DIR$/_02_Collections/_02_Collections.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_03_LambdaUndStreams/_03_LambdaUndStreams.iml" filepath="$PROJECT_DIR$/_03_LambdaUndStreams/_03_LambdaUndStreams.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_04_Compare/_04_Compare.iml" filepath="$PROJECT_DIR$/_04_Compare/_04_Compare.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_05_Pseudocode/_05_Pseudocode.iml" filepath="$PROJECT_DIR$/_05_Pseudocode/_05_Pseudocode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_A01_FileFilter/_A01_FileFilter.iml" filepath="$PROJECT_DIR$/_A01_FileFilter/_A01_FileFilter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_A02_Streams/_A02_Streams.iml" filepath="$PROJECT_DIR$/_A02_Streams/_A02_Streams.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/java_workspace.iml" filepath="$PROJECT_DIR$/.idea/java_workspace.iml" />
+    </modules>
+  </component>
+</project>

@@ -11,6 +11,11 @@ public class Main {
       countdown(n - 1)
     Ende Algorithmus
      */
+
+    /**
+     *
+     * @param n - eine Zahl
+     */
     public static void countdown(int n){
         if(n==0){
             System.out.println("Start");
@@ -28,6 +33,8 @@ public class Main {
         }
         go(n+1);
     }
+
+
 
     public static void main(String[] args) {
         //go(1);

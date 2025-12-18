@@ -6,7 +6,7 @@ public class Auto implements Comparable<Auto>{
     private int geschwindigkeit;
     private String farbe;
 
-    public Auto(int geschwindigkeit, String farbe) {
+    public Auto(int geschwindigkeit, String farbe ) {
         this.geschwindigkeit = geschwindigkeit;
         this.farbe = farbe;
     }
