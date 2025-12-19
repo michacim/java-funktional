@@ -24,8 +24,6 @@ class KlasseTest {
         int result = klasse.max(2,3);
         assertEquals(3,result);
         assertEquals(-1,klasse.max(-1,-3));
-
-
     }
 
     @Test
@@ -33,12 +31,14 @@ class KlasseTest {
        int result =  klasse.max(23,1,3,-5,0,24,1);
        assertEquals(24,result);
 
+    }
 
-       // Test von Exception die von einer Methode geworfen werden
-       assertThrows(IllegalArgumentException.class, () ->  {
-           klasse.max(null);
-       } );
-
+    @Test
+    void testMaxArrayException(){
+        // Test von Exception die von einer Methode geworfen werden
+        assertThrows(IllegalArgumentException.class, () ->  {
+            klasse.max(null);
+        } );
     }
 
     @Test
@@ -53,6 +53,5 @@ class KlasseTest {
 
        List<Integer> nullList = klasse.createList("x");
        assertNull(nullList);
-
     }
 }
