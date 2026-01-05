@@ -13,6 +13,7 @@ public class Klasse{
      * @return größere von beiden Zahlen
      */
     public int max(int a, int b){
+
         return a > b ? a:b;
     }
 
@@ -23,9 +24,10 @@ public class Klasse{
      * @throws  IllegalArgumentException - null
      */
     public int max(int... arr){ // int[]
-        if(arr==null){
-            throw new IllegalArgumentException("Liste darf nicht null sein!");
+        if(arr==null || arr.length==0){
+            throw new IllegalArgumentException("Liste darf nicht null oder leer sein!");
         }
+
         int max = arr[0];
         for(int n:arr){
             if(n > max){

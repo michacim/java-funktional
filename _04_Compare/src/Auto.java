@@ -35,18 +35,22 @@ public class Auto implements Comparable<Auto>{
         return result;
     }
 
+
     public int getGeschwindigkeit() {
         return geschwindigkeit;
     }
+
 
     public void setGeschwindigkeit(int geschwindigkeit) {
         this.geschwindigkeit = geschwindigkeit;
     }
 
+
     public String getFarbe() {
         return farbe;
     }
 
+   
     public void setFarbe(String farbe) {
         this.farbe = farbe;
     }
