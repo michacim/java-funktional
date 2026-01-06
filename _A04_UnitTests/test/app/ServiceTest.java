@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import java.time.Duration;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -72,5 +73,19 @@ class ServiceTest {
         assertThrows(IllegalArgumentException.class,() -> {
             Service.randomNumbers(-1);
         } );
+    }
+
+    @Test
+    void randomNumbers_MaxTime() {
+        int n = 10_000_000;
+        assertTimeout(Duration.ofMillis(1000),() ->{
+            List<Integer> nums = Service.randomNumbers(n);
+            assertEquals(n,nums.size());
+        } );
+
+
+
+
+
     }
 }

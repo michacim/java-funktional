@@ -61,6 +61,7 @@ public class Service {
         var rnd = new Random();
 
         for (int i = 0; i < n; i++) {
+
             numbers.add(rnd.nextInt());
         }
         return numbers;
