@@ -1,6 +1,8 @@
 package app;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Service {
 
@@ -11,7 +13,8 @@ public class Service {
      * @return Summe
      */
     public static int sum(int a, int b){
-        return 0;
+
+        return a + b;
     }
 
     /**
@@ -20,7 +23,8 @@ public class Service {
      * @return true, wenn Zahl gerade ist
      */
     public static boolean isEven(int n){
-        return false;
+
+        return n % 2 == 0;
     }
 
 
@@ -30,7 +34,8 @@ public class Service {
      * @return den Text umgedreht (rückwerts)  z.B. Hallo -> ollaH
      */
     public static String reverse(String text){
-        return "";
+
+        return new StringBuilder(text).reverse().toString();
     }
 
     /**
@@ -45,11 +50,20 @@ public class Service {
 
     /**
      * new Random()
-     * @param count: Anzahl der zufälligen Zahlen
+     * @param n: Anzahl der zufälligen Zahlen
      * @return Liste mit n Zufallszahlen z.B randomNumbers(20) ArrayListe mit 20 Zufallszahlen
      */
-    public static List<Integer> randomNumbers(int count){
-        return null;
+    public static List<Integer> randomNumbers(int n){
+        if(n < 0){
+            throw new IllegalArgumentException("n must be >=0");
+        }
+        var numbers = new ArrayList<Integer>();
+        var rnd = new Random();
+
+        for (int i = 0; i < n; i++) {
+            numbers.add(rnd.nextInt());
+        }
+        return numbers;
     }
 
 }

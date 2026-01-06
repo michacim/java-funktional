@@ -15,6 +15,7 @@ class ServiceTest {
         assertTrue(test);
         assertFalse(Service.isPresent(null));
         assertTrue(Service.isPresent("Max"));
+        assertFalse(Service.isPresent("max"));
         assertTrue(Service.isPresent(" Max "));
         assertFalse(Service.isPresent("otto"));
         boolean test2 = Service.isPresent("");

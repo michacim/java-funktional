@@ -9,6 +9,7 @@ public class Service {
      *
      * @param name (ignore whitespace), case sensitive
      * @return true if contains, else false
+     *
      */
     public static boolean isPresent(String name){
         if(name==null) return false;
