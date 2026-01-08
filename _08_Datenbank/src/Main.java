@@ -10,8 +10,12 @@ public class Main {
             System.out.println("Datenbankverbindung hergestellt!");
 
             // select
-            Statement selectStatement = con.createStatement();
-            ResultSet rs = selectStatement.executeQuery("SELECT * FROM colors");
+           // Statement selectStatement = con.createStatement();
+           // ResultSet rs = selectStatement.executeQuery("SELECT * FROM colors");
+
+            PreparedStatement selectStatement = con.prepareStatement("SELECT * FROM colors");
+            ResultSet rs = selectStatement.executeQuery();
+
 
             while (rs.next()) {
                 int id = rs.getInt("id");
@@ -38,7 +42,7 @@ public class Main {
             System.out.println("delete: "+del);
 
 
-
+            con.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
