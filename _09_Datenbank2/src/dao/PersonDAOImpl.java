@@ -3,10 +3,8 @@ package dao;
 import db.DBConnect;
 import model.Person;
 
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class PersonDAOImpl implements PersonDAO{
@@ -33,11 +31,33 @@ public class PersonDAOImpl implements PersonDAO{
 
     @Override
     public List<Person> findAll() {
-        return List.of();
+        ArrayList<Person> persons = new ArrayList<>();
+        try {
+            PreparedStatement ps = con.prepareStatement("SELECT * FROM persons");
+            ResultSet rs=   ps.executeQuery();
+            while(rs.next()){
+                Person p = new Person();
+                p.setId(rs.getInt("id"));
+                p.setFirstname(rs.getString("firstname"));
+                p.setLastname(rs.getString("lastname"));
+                p.setBirthdate(rs.getDate("birthdate").toLocalDate());
+                persons.add(p);
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return persons;
     }
 
+    // Aufgabe
     @Override
     public boolean delete(int id) {
         return false;
+    }
+
+    @Override
+    public List<Person> findByLastname(String lastname) {
+        return List.of();
     }
 }

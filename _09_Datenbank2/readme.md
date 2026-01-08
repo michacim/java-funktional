@@ -5,3 +5,8 @@
 * löschen
 * veränder/update
 * nach bestimmten Personen (name)
+
+## Aufgabe
+
+* implementiere die beiden Methoden: delete, findByLastname
+* Teste die Methoden in der Main
