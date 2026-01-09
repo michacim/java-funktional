@@ -64,6 +64,11 @@ public class PersonDAOImpl implements PersonDAO{
         return findPersons;
     }
 
+    @Override
+    public boolean update(Person person) {
+        return false;
+    }
+
     private static void buildPersons(PreparedStatement ps, List<Person> findPersons) throws SQLException {
         var rs=   ps.executeQuery();
         while(rs.next()){

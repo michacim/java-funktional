@@ -10,4 +10,5 @@ public interface PersonDAO {
     List<Person> findAll();
     boolean delete(int id);
     List<Person> findByLastname(String lastname);
+    boolean update(Person person);
 }
