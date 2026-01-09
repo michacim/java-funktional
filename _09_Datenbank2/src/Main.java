@@ -13,7 +13,7 @@ public class Main {
         Person p1 = new Person("Anna","Meier", LocalDate.of(2000,10,1));
        // System.out.println(dao.save(p1));
 
-        System.out.println(dao.findAll().size());
+        System.out.println(dao.findAll());
 
     }
 }

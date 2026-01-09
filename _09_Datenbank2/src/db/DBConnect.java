@@ -23,7 +23,7 @@ public class DBConnect {
         }
     }
 
-    public static DBConnect getInstance(){
+    public static DBConnect getInstance(){  //DBConnect.getInstance()
         if(instance==null){
             instance = new DBConnect();
         }
