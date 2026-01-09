@@ -20,8 +20,10 @@ public class Main {
         //Meier
         //1999-04-02
 
-        Person p2 = new Person("Otto","Krause", LocalDate.of(2000,10,1));
+        Person p2 = new Person("Otto","Schultze", LocalDate.of(2000,10,1));
         System.out.println(dao.save(p2));
+
+        p2 = dao.findByLastname("Schultze").get(0);
         p2.setLastname("Lehmann");
 
         System.out.println( dao.update(p2));

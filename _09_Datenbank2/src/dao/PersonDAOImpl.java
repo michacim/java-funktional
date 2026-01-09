@@ -66,7 +66,30 @@ public class PersonDAOImpl implements PersonDAO{
 
     @Override
     public boolean update(Person person) {
-        return false;
+        if (person == null) {
+            throw new IllegalArgumentException("person darf nicht null sein");
+        }
+        if (person.getId() <= 0) {
+            throw new IllegalArgumentException("person.id muss > 0 sein (Update braucht eine ID)");
+        }
+
+        String q = """
+        UPDATE persons
+        SET firstname = ?, lastname = ?, birthdate = ?
+        WHERE id = ?
+        """;
+
+        try (PreparedStatement ps = con.prepareStatement(q)) {
+            ps.setString(1, person.getFirstname());
+            ps.setString(2, person.getLastname());
+            ps.setDate(3, Date.valueOf(person.getBirthdate()));
+            ps.setInt(4, person.getId());
+
+            int n = ps.executeUpdate();
+            return n == 1; // genau ein Datensatz geändert
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private static void buildPersons(PreparedStatement ps, List<Person> findPersons) throws SQLException {
