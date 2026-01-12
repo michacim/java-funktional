@@ -7,7 +7,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PersonDAOImpl implements PersonDAO{
+public class PersonDAOImpl implements PersonDAO {
     private Connection con = DBConnect.getInstance().connection();
 
     @Override

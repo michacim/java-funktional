@@ -4,13 +4,13 @@ import model.Person;
 
 import java.util.List;
 
-public interface PersonDAO {
+public interface DAO<T> {
     //-----Standard-Methoden ----------------------------------
-    boolean save(Person person);
-    List<Person> findAll();
-    Person findById(int id);
+    boolean save(T t);
+    List<T> findAll();
+    T findById(int id);
     boolean delete(int id);
     //------------------------------------------------------------
-    List<Person> findByLastname(String lastname);
-    boolean update(Person person);
+
+    boolean update(T t);
 }
