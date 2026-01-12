@@ -61,7 +61,6 @@ class PersonDAOImplTest {
       Connection con = db.connection();
       assertNotNull(con);
 
-
     }
 
     @Test

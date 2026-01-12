@@ -20,3 +20,13 @@
 3. für konsistente Testumgebung sorgen (vorbereiten,aufräumen)
 4. im Test eigene Connection aufbauen 
 5. gute Testdaten überlegen
+
+## Aufgabe 
+* schreibe Unit-Tests für die übrigen Methoden:
+    *     Person findById(int id);
+    *     boolean delete(int id);
+    *     List<Person> findByLastname(String lastname);
+    *     boolean update(Person person);
+* jede test-Methode kann mehrere Dinge/Aspekte Testen
+* jede Methode kann auch mehrere Test-Methoden besitzen
+* wenn möglich, auch Negativ-Tests
