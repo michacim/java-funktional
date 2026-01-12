@@ -55,7 +55,32 @@ class PersonDAOImplTest {
     }
 
     @Test
+    void testConnection(){
+      DBConnect db=   DBConnect.getInstance();
+      assertNotNull(db);
+      Connection con = db.connection();
+      assertNotNull(con);
+
+
+    }
+
+    @Test
     void save() {
+       boolean saved =  dao.save(new Person("Otto","Krause",LocalDate.of(1999,Month.AUGUST, 13)));
+       assertTrue(saved);
+       assertEquals(4,dao.findAll().size());
+       assertEquals(1,   dao.findByLastname("Krause").size());
+       Person findPerson=   dao.findByLastname("Krause").get(0);
+       assertEquals("Otto", findPerson.getFirstname());
+       assertEquals("Krause", findPerson.getLastname());
+       assertEquals(LocalDate.of(1999,Month.AUGUST, 13), findPerson.getBirthdate());
+
+    }
+    @Test
+    void save_person_is_null(){
+        assertThrows(IllegalArgumentException.class,() -> {
+            dao.save(null);
+        });
     }
 
     @Test

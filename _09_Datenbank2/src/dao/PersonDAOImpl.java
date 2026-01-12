@@ -12,6 +12,9 @@ public class PersonDAOImpl implements PersonDAO{
 
     @Override
     public boolean save(Person person) {
+        if(person==null){
+            throw new IllegalArgumentException("Person darf nicht null sein!");
+        }
         try {
             var q = """
                         INSERT INTO persons (firstname,lastname, birthdate)
