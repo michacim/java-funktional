@@ -9,7 +9,7 @@ import java.sql.SQLException;
  */
 public class DBConnect {
     private Connection con;
-    private static final String HOST ="jdbc:mysql://localhost:3306/ihk_persons";
+    private static final String HOST ="jdbc:mysql://localhost:3306/db_persons";
     private static final String USERNAME="root";
     private static final String PASSWORD="";
 
