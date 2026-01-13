@@ -26,7 +26,7 @@ class PersonDAOImplTest {
        // con = DBConnect.getInstance().connection();//oder eigene Test-Connection aufbauen
 
         con = DriverManager.getConnection(
-                "jdbc:h2:mem:test;MODE=MySQL;DB_CLOSE_DELAY=-1",
+                "jdbc:h2:mem:test;MODE=MySQL;DB_CLOSE_DELAY=-1",  // jdbc:h2:./test.db;MODE=MySQL;DB_CLOSE_DELAY=-1
                 "sa",
                 ""
                 );
