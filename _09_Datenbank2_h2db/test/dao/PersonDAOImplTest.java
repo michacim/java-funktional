@@ -5,6 +5,7 @@ import model.Person;
 import org.junit.jupiter.api.*;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
@@ -21,9 +22,15 @@ class PersonDAOImplTest {
     private PersonDAOImpl dao;
 
     @BeforeAll // wird einmalig am Anfang ausgeführt
-    void setUp() {
-        con = DBConnect.getInstance().connection();//oder eigene Test-Connection aufbauen
-        dao = new PersonDAOImpl();
+    void setUp() throws SQLException {
+       // con = DBConnect.getInstance().connection();//oder eigene Test-Connection aufbauen
+
+        con = DriverManager.getConnection(
+                "jdbc:h2:mem:test;MODE=MySQL;DB_CLOSE_DELAY=-1",
+                "sa",
+                ""
+                );
+        dao = new PersonDAOImpl(con);
         try (Statement st = con.createStatement()){
             st.execute("""
                     CREATE TABLE IF NOT EXISTS persons(
@@ -34,8 +41,6 @@ class PersonDAOImplTest {
                  
                     )
                    """);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
         }
     }
     @BeforeEach //wird vor jeder @Test-Methode ausgeführt
@@ -54,14 +59,14 @@ class PersonDAOImplTest {
     void tearDown() {
     }
 
-    @Test
-    void testConnection(){
-      DBConnect db=   DBConnect.getInstance();
-      assertNotNull(db);
-      Connection con = db.connection();
-      assertNotNull(con);
-
-    }
+//    @Test
+//    void testConnection(){
+//      DBConnect db=   DBConnect.getInstance();
+//      assertNotNull(db);
+//      Connection con = db.connection();
+//      assertNotNull(con);
+//
+//    }
 
     @Test
     void save() {

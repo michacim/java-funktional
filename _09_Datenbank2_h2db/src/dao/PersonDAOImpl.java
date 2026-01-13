@@ -8,7 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PersonDAOImpl implements PersonDAO{
-    private Connection con = DBConnect.getInstance().connection();
+    private Connection con;// = DBConnect.getInstance().connection();
+
+    public PersonDAOImpl(){
+        this(DBConnect.getInstance().connection());
+    }
+    public PersonDAOImpl(Connection con){
+        this.con =con;
+    }
 
     @Override
     public boolean save(Person person) {
